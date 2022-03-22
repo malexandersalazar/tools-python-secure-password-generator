@@ -1,4 +1,7 @@
 # Secure password generator
+
+![alt text](/images/cover.png "Secure Password Generator")
+
  A tool for generating strong passwords to prevent from being hacked by social engineering, brute force or dictionary attack method.
 
 ## Installation
@@ -13,7 +16,7 @@ The default behaviour of the script will generate a secure password of 16 charac
 
 You can also set a desired number of characters as a parameter. 
 
-> python spg.py 24
+> python spg.py 42
 
 ## Prerequisites
 
