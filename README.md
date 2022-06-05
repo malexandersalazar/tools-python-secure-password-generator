@@ -18,6 +18,12 @@ You can also set a desired number of characters as a parameter.
 
 > python spg.py 42
 
+Or the generation mode `--an (alphanumeric)`. 
+
+> python spg.py --an
+
+> python spg.py 8 --an
+
 ## Prerequisites
 
 * Python (>= 3.7.13)
