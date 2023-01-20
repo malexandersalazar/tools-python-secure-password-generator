@@ -14,15 +14,19 @@ The default behaviour of the script will generate a secure password of 16 charac
 
 > python spg.py
 
-You can also set a desired number of characters as a parameter. 
+You can also set a desired size as a parameter. 
 
-> python spg.py 42
+> python spg.py -s=12
 
-Or the generation mode `--an (alphanumeric)`. 
+Or the generation mode `m=a (alphanumeric)`. 
 
-> python spg.py --an
+> python spg.py -m=a
 
-> python spg.py 8 --an
+If you want to generate more than one password, just set the quantity parameter `q`
+
+> python spg.py -s=10 -q=10
+
+> python spg.py -m=a -q=3 -s=5
 
 ## Prerequisites
 
