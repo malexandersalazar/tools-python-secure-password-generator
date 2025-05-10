@@ -11,7 +11,7 @@ def length_argument(x):
     return x
 
 parser.add_argument('-m','--mode', choices=['s','a'], default='s', type=str, help='specifies the mode in which the password generation should be executed, "s" for secure and "a" for alphanumeric (default: "s")')
-parser.add_argument('-l','--length', default=16, type=length_argument, help='specifies the password length (default: 16, min: 12)')
+parser.add_argument('-l','--length', default=26, type=length_argument, help='specifies the password length (default: 26, min: 12)')
 parser.add_argument('-q','--quantity', default=1, type=int, help='specifies the number of passwords that should be generated (default: 1)')
 args=parser.parse_args()
 
@@ -30,6 +30,7 @@ def validate_secure(pwd):
     contains_upper = False
     contains_lower = False
     contains_special = False
+    contains_digit = False
     for s in pwd:
         if s.isupper():
             contains_upper = True
@@ -37,7 +38,9 @@ def validate_secure(pwd):
             contains_lower = True
         elif s in _symbols:
             contains_special = True
-    return contains_upper and contains_lower and contains_special
+        elif s.isdigit():
+            contains_digit = True
+    return contains_upper and contains_lower and contains_special and contains_digit
 
 
 def run(mode,length,quantity):
